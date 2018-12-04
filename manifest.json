@@ -1,0 +1,28 @@
+{
+    "name": "Twitter adblock ext",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "This extension will remove the promoted twitter posts in your feed and let you enjoy browsing twitter",
+    "homepage_url": "https://github.com/meabed/twitter-adblock-ext",
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "src/bg/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [{
+        "matches": [
+            "https://mobile.twitter.com/*",
+            "https://twitter.com/*"
+        ],
+        "js": [
+            "src/inject/inject.js"
+        ]
+    }]
+}
